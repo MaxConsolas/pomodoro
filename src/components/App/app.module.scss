@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.box {
+  width: 100%;
+  max-width: 720px;
+  padding: 30px 0px;
+  margin: 0 auto; 
+  position: relative;
+  z-index: 5;
+}
