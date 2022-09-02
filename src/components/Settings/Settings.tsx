@@ -1,11 +1,12 @@
 import React from 'react'
 import CustomCheckbox from './custom-checkbox/CustomCheckbox'
+import Select from './select/Select'
 import styles from './settings.module.scss'
 import ShortBreakButton from './short-break-button/ShortBreakButton'
 
 export default function Settings(props: any) {
   return (
-    <div className={styles.settings}>
+    <div className={styles.settings} style={{display: props.displaySettings}}>
 
       <div className={styles.right_box}>
 
@@ -40,12 +41,12 @@ export default function Settings(props: any) {
       <div className={styles.left_box}>
         <div style={{marginBottom: '20px', display: 'flex', alignItems: 'center'}}>
           <p className={styles.label}>Long Break Interval</p>
-          <input className={`${styles.input} ${styles.small}`} type='text' />
+          <input className={`${styles.input} ${styles.small}`} type='text' placeholder='sessions' />
         </div>
-        <div>
-          <p className={styles.label}>Alarm Sounds</p>
-          {/* //TODO: make a custom select+options */}
-        </div>
+        <Select 
+          classNameForLabel={styles.label}
+        />
+
       </div>
     </div>
   )

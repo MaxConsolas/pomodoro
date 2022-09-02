@@ -15,10 +15,10 @@ export default function Header(props: any) {
         <h1>Pomodoro</h1>
       </div>
       <div className={styles.wrapper}>
-        <HeaderItem>
+        <HeaderItem onClick={props.onClickSettings}>
           <img src={settings} alt="settings" />
         </HeaderItem>
-        <HeaderItem>
+        <HeaderItem onClick={props.onClicColorPalette}>
           <img src={palette} alt="color palette" />
         </HeaderItem>
       </div>

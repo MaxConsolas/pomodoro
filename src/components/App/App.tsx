@@ -10,11 +10,19 @@ import bazilik from '../../images/bazilik.png'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
 import Settings from '../Settings/Settings'
+import ColorPalette from '../ColorPalette/ColorPalette'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 
 function App() {
+  const [settings, setSettings] = useState('flex')
+  const [color, setColor] = useState('none')
+
+  const currentBgColor = useSelector((state: any) => state.color.color)
+
   return (
-    <Wrapper background='#D95550'>
+    <Wrapper background={currentBgColor}>
       {/* картиношки на фоне start */}
         <img src={tomato} alt="tomato" style={{position: 'absolute', transform: 'rotate(15deg)', width: '120px', top: '-30px', left: '-30px'}} />
         <img src={tomato} alt="tomato" style={{position: 'absolute', transform: 'rotate(-30deg)', width: '560px', bottom: '-100px', left: '-180px'}} />
@@ -25,9 +33,20 @@ function App() {
       {/* картиношки на фоне end */}
 
       <div className={styles.box}>
-        <Header />
+        <Header 
+          onClickSettings={() => {
+            setSettings('flex')
+            setColor('none')
+          }}
+          onClicColorPalette={() => {
+            setSettings('none')
+            setColor('flex')
+          }}
+        />
         <Main />
-        <Settings />
+        <Settings displaySettings={settings}/> 
+        <ColorPalette displayColor={color}/>
+        {/* // TODO: поднять проспсы стилей на дисплей и передать в хэдэровские функции */}
       </div>
     </Wrapper>
   );
