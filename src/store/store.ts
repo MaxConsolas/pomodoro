@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from 'react-redux'
 import changeColorSlice from "./slices/changeColorSlice";
+import setCurrentTab from "./slices/currentTab";
+import setTime from "./slices/timeSlice";
 
 const store = configureStore({
     reducer: {
-        color: changeColorSlice
+        color: changeColorSlice,
+        time: setTime,
+        currentTab: setCurrentTab,
     }
 })
 

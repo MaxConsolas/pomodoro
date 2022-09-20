@@ -81,7 +81,7 @@ export default function Select(props: any) {
       />
       <Button
         padding='8px 50px'
-        onClick=''
+        onClick={props.onClick}
         buttonTitle='SAVE'
       />
     </div>

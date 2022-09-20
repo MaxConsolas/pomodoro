@@ -7,7 +7,7 @@ const changeColorSlice = createSlice({
     },
     reducers: {
         setBgColor(state, action) {
-            state.color = action.payload 
+            state.color = action.payload;
         }
     }
 })
